@@ -118,41 +118,40 @@ while place_order:
                     }
                     i += 1
             # 2. Ask customer to input menu item number
-                menu_selection = input("Please enter menu item number: ")
+            menu_selection = input("Please enter menu item number: ")
 
             # 3. Check if the customer typed a number
-                if menu_selection.isdigit():
+            if menu_selection.isdigit():
                 # Convert the menu selection to an integer
                     
 
                 # 4. Check if the menu selection is in the menu items
-                    if int(menu_selection) in menu_items.keys():
+                if int(menu_selection) in menu_items.keys():
                     # Store the item name as a variable
-                        selected_item = menu_items[int(menu_selection)]["Item name"]
+                    selected_item = menu_items[int(menu_selection)]["Item name"]
 
                     # Ask the customer for the quantity of the menu item
-                        quantity = input(f"How many {selected_item}s do you want? ")
+                    quantity = input(f"How many {selected_item}s do you want? ")
 
                     # Check if the quantity is a number, default to 1 if not
-                        if quantity.isdigit():
+                    if quantity.isdigit():
                             quantity = int(quantity)
-                        else:
+                    else:
                             quantity = 1
 
                     # Add the item name, price, and quantity to the order list
-                        order_list.append({
-                            "Item name": selected_item,
-                            "Price": menu_items[int(menu_selection)]["Price"],
-                            "Quantity": quantity
-                        })
-                        print(f"You selected {quantity} {selected_item}s")
-
+                    order_list.append({
+                        "Item name": selected_item,
+                        "Price": menu_items[int(menu_selection)]["Price"],
+                        "Quantity": quantity
+                    })
+                    print(f"You selected {quantity} {selected_item}s")
                     # Tell the customer that their input isn't valid
-                    else:
-                        print(f"{menu_selection} is not a valid menu item.")
+                else:
+                    print(f"{menu_selection} is not a valid menu item.")
 
                 # Tell the customer they didn't select a menu option
-                else:
+            
                     print("You did not select a valid menu item number.")
         else:
             # Tell the customer they didn't select a menu option
@@ -184,7 +183,7 @@ while place_order:
 
                 # Tell the customer to try again
         else:
-            print("Please try again by entering Y or N.")
+                print("Please try again by entering Y or N.")
 
 
 # Print out the customer's order
